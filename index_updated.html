@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saathwik's-portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="left">Saathwik's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="firstSection" id="home">
+        <div class="LeftSection">
+          Hi, My name is <span class="purple">Saathwik</span>
+          <div>and i am a passionate</div>
+          <span id="element"></span>
+          <div class="buttons">
+            <a href="Saathwikresume.pdf" download class="btn">
+              <img src="Icons/download.png" alt="Download" />
+              Download Resume
+            </a>
+            <a href="https://github.com/Saathwik43" target="_blank" class="btn">
+              <img src="Icons/github-logo.png" alt="GitHub" />
+              Visit Github
+            </a>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="Icons/bg.png" alt="" />
+        </div>
+      </section>
+      <hr />
+      <!-- About Section -->
+      <section class="about-section" id="about">
+        <div class="about-header">
+          <span class="text-gray">Get To Know</span>
+          <h1>About Me</h1>
+        </div>
+        <div class="about-container">
+          <div class="about-image">
+            <img src="Icons/profile.png" alt="Profile Picture" />
+          </div>
+          <div class="about-content">
+            <div class="about-cards">
+              <div class="about-card">
+                <h3>Education :</h3>
+                <p>
+                  B.Tech in Computer Science Engineering (Specialized in Data
+                  Science)
+                </p>
+              </div>
+            </div>
+            <p class="about-text">
+              I am a Computer Science student with a keen interest in
+              Data Science and Machine Learning. Currently pursuing my B.Tech in
+              Computer Science, I love to explore new technologies and build
+              projects that solve real-world problems.
+            </p>
+            <a href="#contact" class="btn">Let's Talk</a>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section class="Secondsection" id="skills">
+        <div class="section-header">
+          <div class="header-text">
+            <span class="text-gray">What i've learnt so far</span>
+            <h1>Skills & Technologies</h1>
+          </div>
+          <img
+            src="Icons/analytics.png"
+            alt="Analytics"
+            class="analytics-icon"
+          />
+        </div>
+        <div class="skills-container">
+          <div class="programming-skills">
+            <h2>Programming Languages</h2>
+            <div class="box1">
+              <div class="icon-container">
+                <img src="Icons/Html.png" alt="HTML" />
+                <img src="Icons/css-alt.png" alt="CSS" />
+              </div>
+              <span>HTML & CSS</span>
+            </div>
+            <div class="box2">
+              <img src="Icons/javascript.png" alt="JavaScript" />
+              <span>JavaScript</span>
+            </div>
+            <div class="box3">
+              <img src="Icons/react.png" alt="React Native" />
+              <span>React Native</span>
+            </div>
+            <div class="box4">
+              <img src="Icons/python.png" alt="Python" />
+              <span>Python</span>
+            </div>
+            <div class="box5">
+              <img src="Icons/cpp.png" alt="C++" />
+              <span>C++</span>
+            </div>
+          </div>
+          <div class="databases">
+            <h2>Databases and Technologies</h2>
+            <div class="box1">
+              <img src="Icons/mysql.png" alt="MySQL" />
+              <span>MySQL</span>
+            </div>
+            <div class="box2">
+              <img src="Icons/mongodb.png" alt="MongoDB" />
+              <span>MongoDB</span>
+            </div>
+            <div class="box3">
+              <img src="Icons/git.png" alt="Git" />
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <!-- Projects Section -->
+      <section class="projects-section" id="projects">
+        <div class="section-header">
+          <div class="header-text">
+            <span class="text-gray">My Recent Work</span>
+            <h1>Projects</h1>
+          </div>
+          <img src="Icons/project.png" alt="Projects" class="project-icon" />
+        </div>
+        <div class="projects-container">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="Icons/project1.png" alt="Sentiment Analysis Chatbot" />
+            </div>
+            <h3>Sentiment Analysis Chatbot</h3>
+            <p class="project-description">
+              A beginner-friendly GUI-based sentiment analysis chatbot that
+              analyzes text sentiment using natural language processing.
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>NLTK</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/Saathwik43/Sentiment_Analysis_Chatbot.git"
+                target="_blank"
+                class="btn project-btn"
+              >
+                <img src="Icons/github-logo.png" alt="GitHub" />
+                Code
+              </a>
+              <a href="https://sentimentanalysischatbot.streamlit.app/" target="_blank" class="btn project-btn">
+                <img src="Icons/link.png" alt="Live Demo" />
+                Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">
+              <img src="Icons/project2.png" alt="ML Project" />
+            </div>
+            <h3>Object Detection</h3>
+            <p class="project-description">
+              A model that identifies and classifies faces within images in
+              real time. (Currently in training)
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>Scikit-learn</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/Saathwik43/Object_Detector.git"
+                target="_blank"
+                class="btn project-btn"
+              >
+                <img src="Icons/github-logo.png" alt="GitHub" />
+                Code
+              </a>
+              <a href="https://objectdetector-npm.streamlit.app/" target="_blank" class="btn project-btn">
+                <img src="Icons/link.png" alt="Live Demo" />
+                Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">
+              <img src="Icons/portfolio.png" alt="Portfolio Website" />
+            </div>
+            <h3>Personal portfolio Website</h3>
+            <p class="project-description">
+              A personal portfolio website showcasing my projects and skills.
+              <br> </br>
+              <br><b>(You are currently viewing it!)</b></br>
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">
+              <img src="Icons/project3.png" alt="Game Dev Project" />
+            </div>
+            <h3>Mini Games</h3>
+            <p class="project-description">
+              A collection of small games developed using modern game
+              development frameworks. (Tic-tac-toe, rock-paper-scissors, etc.)
+              <br>(Currently in an update!)</br>
+            </p>
+            <div class="project-tech">
+              <span>Unity</span>
+              <span>C#</span>
+              <span>Game Design</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/Saathwik43/Tic-Tac-Toe.git"
+                target="_blank"
+                class="btn project-btn"
+              >
+                <img src="Icons/github-logo.png" alt="GitHub" />
+                Code
+              </a>
+              <a href="https://saathwik43.github.io/Tic-Tac-Toe/" target="_blank" class="btn project-btn">
+                <img src="Icons/link.png" alt="Live Demo" />
+                Live Demo
+              </a>
+            </div>
+          </div>
+          <div class="project-card coming-soon">
+            <div class="project-img">
+              <img
+                src="Icons/project4.png"
+                alt="Data Visualization Dashboard"
+              />
+            </div>
+            <h3>Data Visualization Dashboard</h3>
+            <p class="project-description">
+              An interactive dashboard for visualizing complex datasets with
+              customizable charts and filters.
+            </p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>D3.js</span>
+              <span>Firebase</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn project-btn disabled">
+                <img src="Icons/github-logo.png" alt="GitHub" />
+                Code
+              </a>
+              <a href="#" class="btn project-btn disabled">
+                <img src="Icons/link.png" alt="Live Demo" />
+                Live Demo
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card coming-soon">
+            <div class="project-img">
+              <img src="Icons/project5.png" alt="AI Music Generator" />
+            </div>
+            <h3>AI Music Generator</h3>
+            <p class="project-description">
+              A machine learning application that generates original music
+              compositions based on user preferences.
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>Web Audio API</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn project-btn disabled">
+                <img src="Icons/github-logo.png" alt="GitHub" />
+                Code
+              </a>
+              <a href="#" class="btn project-btn disabled">
+                <img src="Icons/link.png" alt="Live Demo" />
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <!-- Contact Section -->
+      <section class="contact-section" id="contact">
+        <div class="section-header">
+          <div class="header-text">
+            <span class="text-gray">Get In Touch</span>
+            <h1>Contact Me</h1>
+          </div>
+          <img src="Icons/contact.png" alt="Contact" class="analytics-icon" />
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-card">
+              <img src="Icons/email.png" alt="Email" />
+              <h3>Email</h3>
+              <p>saathwik43@gmail.com</p>
+              <a href="mailto:saathwik43@gmail.com">Send a message</a>
+            </div>
+            <div class="contact-card">
+              <img src="Icons/linkedin.png" alt="LinkedIn" />
+              <h3>LinkedIn</h3>
+              <p>Saathwik_43</p>
+              <a href="https://www.linkedin.com/" target="_blank"
+                >Connect with me</a
+              >
+            </div>
+            <div class="contact-card">
+              <img src="Icons/whatsapp.png" alt="WhatsApp" />
+              <h3>WhatsApp</h3>
+              <p>+91 9642526556</p>
+              <a href="https://wa.me/" target="_blank">Send a message</a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contact-form" action="#" method="post">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Full Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  rows="7"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <div class="footer-profile">
+            <img src="Icons/profile.png" alt="Profile Photo" />
+          </div>
+          <h3>Saathwik's Portfolio</h3>
+          <p>Computer Science Student</p>
+        </div>
+        <div class="footer-second">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-third">
+          <h4>Connect with me</h4>
+          <div class="social-icons">
+            <a href="https://github.com/Saathwik43" target="_blank"
+              ><img src="Icons/github-logo.png" alt="GitHub"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/saathwik-mailapalli-99ab62295/"
+              target="_blank"
+              ><img src="Icons/linkedin.png" alt="LinkedIn"
+            /></a>
+            <a
+              href="https://www.instagram.com/me_saathwik/?next=%2F"
+              target="_blank"
+              ><img src="Icons/instagram.png" alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-rights">
+        <p>
+          Copyright &#169; 2025 saathwiksportfolio.com | All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "OSkEaLWudbRHc_rT3",
+        });
+      })();
+    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
