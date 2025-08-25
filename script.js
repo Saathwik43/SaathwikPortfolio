@@ -1,11 +1,8 @@
-// filepath: c:\Users\saath\OneDrive\Desktop\GitProjects\Portfolio_website\script.js
 // Typing animation configuration
 var typed = new Typed('#element', {
     strings: ['Data Science Student !','Game Developer !','Machine Learning Enthusiast !'],
     typeSpeed: 60,
 });
-
-// Add this to your script.js file
 
 // Function to handle smooth scrolling to sections when clicking navigation links
 document.addEventListener('DOMContentLoaded', function() {
