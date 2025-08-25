@@ -1,3 +1,2 @@
 [build]
-  publish = "."     # this is the folder containing index.html
-  command = ""      # no build command needed
+  publish = "."
