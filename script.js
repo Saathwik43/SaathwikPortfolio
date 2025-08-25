@@ -197,3 +197,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Resume download animation
+document.addEventListener('DOMContentLoaded', function() {
+    const resumeButton = document.querySelector('a[href="Saathwikresume.pdf"]');
+    
+    if (resumeButton) {
+        resumeButton.addEventListener('click', function(event) {
+            // Prevent default download for animation
+            event.preventDefault();
+            
+            const originalContent = this.innerHTML;
+            const downloadUrl = this.getAttribute('href');
+            
+            // Start download animation
+            this.classList.add('downloading');
+            this.innerHTML = `
+                <div class="download-spinner"></div>
+                Downloading...
+            `;
+            this.style.pointerEvents = 'none';
+            
+            // Simulate download progress
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 30;
+                if (progress > 90) progress = 90;
+                
+                this.innerHTML = `
+                    <div class="download-spinner"></div>
+                    Downloading... ${Math.round(progress)}%
+                `;
+            }, 200);
+            
+            // Complete download after 2 seconds
+            setTimeout(() => {
+                clearInterval(progressInterval);
+                
+                // Show success state
+                this.classList.remove('downloading');
+                this.classList.add('download-success');
+                this.innerHTML = `
+                    <div class="download-checkmark">✓</div>
+                    Downloaded!
+                `;
+                
+                // Actually trigger the download
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = 'Saathwikresume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    this.classList.remove('download-success');
+                    this.innerHTML = originalContent;
+                    this.style.pointerEvents = 'auto';
+                }, 2000);
+                
+            }, 2000);
+        });
+    }
+});
