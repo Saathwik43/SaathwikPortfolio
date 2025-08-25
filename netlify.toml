@@ -1,9 +1,3 @@
 [build]
-  publish = "dist"  # or wherever your built files are
-  command = "npm run build"  # your build command
-
-# For SPAs - redirect all routes to index.html
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  publish = "."     # this is the folder containing index.html
+  command = ""      # no build command needed
