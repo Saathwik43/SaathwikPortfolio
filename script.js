@@ -149,7 +149,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Disable the button and show "Sending..."
             submitButton.disabled = true;
-            submitButton.textContent = "Sending...";
+            submitButton.classList.add('sending');
+            
+            const icon = submitButton.querySelector('i');
+            const text = submitButton.querySelector('.btn-text');
+            
+            text.textContent = "Sending...";
             
             // The parameters object that will be sent to your EmailJS template
             const templateParams = {
@@ -166,9 +171,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                     
-                    // Show success message using your CSS class
-                    submitButton.textContent = "Message Sent!";
-                    submitButton.classList.add('success');
+                    // Show success message
+                    submitButton.classList.remove('sending');
+                    submitButton.classList.add('sent', 'success');
+                    
+                    icon.className = 'fa-solid fa-envelope-circle-check';
+                    text.textContent = "Message Sent!";
                     
                     // Clear the form
                     contactForm.reset();
@@ -176,22 +184,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Reset the button after 3 seconds
                     setTimeout(() => {
                         submitButton.disabled = false;
-                        submitButton.textContent = originalButtonText;
-                        submitButton.classList.remove('success');
+                        submitButton.classList.remove('sent', 'success');
+                        icon.className = 'fa-solid fa-paper-plane';
+                        text.textContent = "Send Message";
                     }, 3000);
                     
                 }, function(error) {
                     console.log('FAILED...', error);
                     
-                    // Show error message using your CSS class
-                    submitButton.textContent = "Failed to Send";
+                    // Show error message
+                    submitButton.classList.remove('sending');
                     submitButton.classList.add('error');
+                    
+                    text.textContent = "Failed to Send";
                     
                     // Reset the button after 3 seconds
                     setTimeout(() => {
                         submitButton.disabled = false;
-                        submitButton.textContent = originalButtonText;
                         submitButton.classList.remove('error');
+                        text.textContent = "Send Message";
                     }, 3000);
                 });
         });
