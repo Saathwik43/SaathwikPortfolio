@@ -149,6 +149,148 @@ nav ul li a:not(.active):hover::after {
     transform: scaleX(0.8);
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .right {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(18, 18, 62);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .right.active {
+        display: block;
+    }
+    
+    .right ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .right ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    /* Home Section */
+    .firstSection {
+        margin: 40px 0;
+        padding: 20px 3%;
+    }
+    
+    .firstSection .container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .LeftSection {
+        order: 2;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .intro-text {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    .rightSection {
+        order: 1;
+        max-width: 100%;
+    }
+    
+    .rightSection img {
+        width: clamp(200px, 50vw, 300px);
+        height: auto;
+    }
+    
+    /* About Section */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-image {
+        margin-bottom: 30px;
+    }
+    
+    /* Skills Section */
+    .Secondsection {
+        padding: 20px 3%;
+    }
+    
+    .skills-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .analytics-icon {
+        display: none;
+    }
+    
+    .Secondsection h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+    
+    .Secondsection h2 {
+        font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Projects Section */
+    .project-card {
+        min-width: 280px;
+    }
+    
+    .project-icon {
+        display: none;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-form {
+        order: 1;
+    }
+}
+
 /* ===================================================
    COMMON SECTION STYLES
    =================================================== */
@@ -189,22 +331,34 @@ main hr {
    HOME SECTION (FIRST SECTION)
    =================================================== */
 .firstSection {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     margin: 110px 0;
+    padding: 0 5%;
 }
 
-.firstSection > div {
-    width: 30%;
-}
-
-.firstSection > .LeftSection {
-    width: 40%;
+.firstSection .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
 }
 
 .LeftSection {
-    font-size: 2.3rem;
+    flex: 1;
+    max-width: 500px;
+}
+
+.intro-text {
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.rightSection {
+    flex: 1;
+    text-align: center;
+    max-width: 400px;
 }
 
 .LeftSection .btn {
@@ -354,34 +508,40 @@ main hr {
    SKILLS SECTION
    =================================================== */
 .Secondsection {
-    max-width: 85vw;
-    margin: auto;
-    height: auto;
-    padding-bottom: 40px;
+    padding: 40px 5%;
+}
+
+.Secondsection .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .Secondsection h1 {
-    font-size: 2.01rem;
-    margin-bottom: 40px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
 }
 
 .Secondsection h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin-bottom: 1rem;
 }
 
 /* Skills Container */
 .skills-container {
     display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    margin-top: 20px;
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
 .programming-skills,
 .databases {
     flex: 1;
-    max-width: 48%;
+}
+
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 /* Skills Box Base Styles */
@@ -804,16 +964,18 @@ main hr {
    CONTACT SECTION
    =================================================== */
 .contact-section {
-    max-width: 85vw;
+    padding: 40px 5%;
+}
+
+.contact-section .container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 0;
 }
 
 .contact-container {
     display: flex;
-    gap: 40px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
 /* Contact Info Cards */
@@ -1178,43 +1340,36 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ===================================================
-   RESPONSIVE STYLES (MEDIA QUERIES)
-   =================================================== */
-@media (max-width: 768px) {
-    /* About Section */
-    .about-container {
+@media (max-width: 576px) {
+    .left {
+        font-size: 1.3rem;
+    }
+    
+    .LeftSection {
+        font-size: 1.5rem;
+    }
+    
+    .buttons {
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
     }
     
-    .about-image {
-        margin-bottom: 20px;
-    }
-    
-    /* Contact Section */
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .contact-info {
-        order: 2;
-    }
-    
-    .contact-form {
-        order: 1;
-    }
-    
-    /* Projects Section */
-    .projects-container {
-        justify-content: flex-start;
-        padding-bottom: 30px;
+    .buttons .btn {
+        font-size: 14px;
+        padding: 10px 15px;
+        margin: 0;
     }
     
     .project-card {
-        width: 100%;
-        max-width: 350px;
-        min-width: 280px;
+        min-width: 260px;
+    }
+    
+    .about-image img {
+        max-width: 200px;
+    }
+    
+    .section-header h1 {
+        font-size: 1.8rem;
     }
     
     /* Footer */
@@ -1240,6 +1395,25 @@ footer {
     
     .social-icons {
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .firstSection {
+        margin: 40px 15px;
+    }
+    
+    .LeftSection {
+        font-size: 1.3rem;
+    }
+    
+    .project-card {
+        min-width: 240px;
+        padding: 15px;
+    }
+    
+    main hr {
+        margin: 22px 20px;
     }
 }
 
