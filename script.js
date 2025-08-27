@@ -1,6 +1,6 @@
 // Typing animation configuration
 var typed = new Typed('#element', {
-    strings: ['Data Science Student !','Game Developer !','Machine Learning Enthusiast !'],
+    strings: ['Data Science Student ','Full Stack Developer !','Machine Learning Enthusiast ','Tech Explorer !'],
     typeSpeed: 60,
 });
 
@@ -271,4 +271,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         });
     }
+});
+// Mobile Menu Toggle Functionality
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const menuRight = document.querySelector('.right');
+
+menuToggle.addEventListener('click', function() {
+    menuToggle.classList.toggle('active');
+    menuRight.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('.right ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        menuRight.classList.remove('active');
+    });
 });
