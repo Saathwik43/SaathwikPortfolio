@@ -776,6 +776,14 @@ main hr {
     opacity: 0.7;
 }
 
+/* J.A.R.V.I.S project adjustments */
+.project-card:nth-child(5) .project-img img {
+    object-fit: contain;
+    object-position: center top;
+    height: 100%;
+    width: 100%;
+}
+
 /* Subtle arrow indicators at the edges */
 .projects-container::before,
 .projects-container::after {
