@@ -596,6 +596,38 @@ main hr {
     max-width: 32%;
 }
 
+/* Responsive Skills Section */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .programming-skills,
+    .frameworks-tools,
+    .databases {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .skills-container {
+        gap: 1.5rem;
+    }
+    
+    .skill-item {
+        padding: 12px;
+    }
+    
+    .skill-name {
+        font-size: 0.95rem;
+    }
+    
+    .skill-desc {
+        font-size: 0.8rem;
+    }
+}
+
 /* New skill item structure */
 .skill-item {
     display: flex;
@@ -860,13 +892,7 @@ main hr {
     opacity: 0.7;
 }
 
-/* J.A.R.V.I.S project adjustments */
-.project-card:nth-child(5) .project-img img {
-    object-fit: contain;
-    object-position: center top;
-    height: 100%;
-    width: 100%;
-}
+
 
 /* Subtle arrow indicators at the edges */
 .projects-container::before,
