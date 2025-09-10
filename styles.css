@@ -379,176 +379,49 @@ main hr {
 }
 
 .programming-skills,
+.frameworks-tools,
 .databases {
     flex: 1;
-    max-width: 48%;
+    max-width: 32%;
 }
 
-/* Skills Box Base Styles */
-.Secondsection .programming-skills [class^="box"] {
+/* New skill item structure */
+.skill-item {
     display: flex;
-    align-items: center;
-    padding: 12px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid rgb(160, 91, 224);
 }
 
-/* Programming Skills Specific Styles */
-/* Box Specific Gradients */
-.Secondsection .programming-skills .box1 {
-    background: linear-gradient(90deg, orange 90%, rgba(255, 255, 255, 0.1) 90%);
-}
-
-.Secondsection .programming-skills .box2 {
-    background: linear-gradient(90deg, yellow 80%, rgba(255, 255, 255, 0.1) 80%);
-    color: black;
-}
-
-.Secondsection .programming-skills .box3 {
-    background: linear-gradient(90deg, rgb(38, 217, 253) 70%, rgba(255, 255, 255, 0.1) 70%);
-    color: black;
-}
-
-.Secondsection .programming-skills .box3 img {
-    filter: brightness(0);
-    opacity: 0.8;
-}
-
-.Secondsection .programming-skills .box3 span {
-    color: black;
-    font-weight: 500;
-}
-
-.Secondsection .programming-skills .box4 {
-    background: linear-gradient(90deg, #306998 89%, rgba(255, 255, 255, 0.1) 89%);
-}
-
-.Secondsection .programming-skills .box4 img {
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-}
-
-.Secondsection .programming-skills .box4 span {
-    color: white;
-    font-weight: 500;
-}
-
-.Secondsection .programming-skills .box5 {
-    background: linear-gradient(90deg, #00599C 75%, rgba(255, 255, 255, 0.1) 75%);
-}
-
-/* Programming Skills Icon Styling */
-.Secondsection .programming-skills img {
-    width: 25px;
-    height: 25px;
+.skill-item img {
+    width: 30px;
+    height: 30px;
     object-fit: contain;
-    margin-right: 10px;
 }
 
-.Secondsection .programming-skills .icon-container {
+.skill-content {
     display: flex;
-    gap: 5px;
-    margin-right: 10px;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.Secondsection .programming-skills span {
-    flex: 1;
-}
-
-/* Programming Skills Percentage Indicators */
-.Secondsection .programming-skills [class^="box"]::after {
-    position: absolute;
-    right: 10px;
+.skill-name {
+    font-weight: 600;
     color: white;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
 }
 
-.Secondsection .programming-skills .box1::after { content: "90%"; }
-.Secondsection .programming-skills .box2::after { content: "80%"; }
-.Secondsection .programming-skills .box3::after { content: "70%"; }
-.Secondsection .programming-skills .box4::after { content: "89%"; }
-.Secondsection .programming-skills .box5::after { content: "75%"; }
-
-/* Database and Technologies Styles */
-.Secondsection .databases .box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px;
-    margin-bottom: 8px;
-    border-radius: 4px;
+.skill-desc {
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    line-height: 1.3;
 }
 
-.Secondsection .databases [class^="box"] {
-    display: flex;
-    align-items: center;
-    padding: 12px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    position: relative;
-}
 
-/* Database Box Specific Styles */
-.Secondsection .databases .box1 {
-    background: linear-gradient(90deg, #00758F 80%, rgba(255, 255, 255, 0.1) 80%);
-    color: white;
-}
-
-.Secondsection .databases .box2 {
-    background: linear-gradient(90deg, #4DB33D 62%, rgba(255, 255, 255, 0.1) 62%);
-    color: white;
-}
-
-.Secondsection .databases .box3 { 
-    background: linear-gradient(90deg, #F1502F 70%, rgba(255,255,255,0.1) 70%); 
-}
-
-/* Database Icons Styling */
-.databases img,
-.databases .box3 img {
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-}
-
-.Secondsection .databases img {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-    margin-right: 10px;
-}
-
-.Secondsection .databases .box1 img {
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-}
-
-.Secondsection .databases .box1 span {
-    color: white;
-    font-weight: 500;
-}
-
-.Secondsection .databases .box2 img {
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-}
-
-.Secondsection .databases .box2 span {
-    color: white;
-    font-weight: 500;
-}
-
-/* Database Percentage Indicators */
-.Secondsection .databases [class^="box"]::after {
-    position: absolute;
-    right: 10px;
-    color: white;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-.Secondsection .databases .box1::after { content: "80%"; }
-.Secondsection .databases .box2::after { content: "62%"; }
-.Secondsection .databases .box3::after { content: "70%"; }
 
 /* ===================================================
    PROJECTS SECTION
