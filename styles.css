@@ -370,56 +370,310 @@ main hr {
     margin-bottom: 10px;
 }
 
-/* Skills Container */
-.skills-container {
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    margin-top: 20px;
+/* ─── BENTO GRID ─────────────────────────────────────── */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 18px;
+    margin-top: 28px;
 }
 
-.programming-skills,
-.frameworks-tools,
-.databases {
-    flex: 1;
-    max-width: 32%;
+/* Grid placement — row 1 */
+.bento-languages { grid-column: 1 / 3; grid-row: 1; align-self: start; }
+.bento-ml        { grid-column: 3 / 4; grid-row: 1; }
+.bento-llm       { grid-column: 4 / 5; grid-row: 1; }
+
+/* Grid placement — row 2 */
+.bento-infra     { grid-column: 1 / 3; grid-row: 2; align-self: start; }
+.bento-backend   { grid-column: 3 / 4; grid-row: 2; }
+.bento-db        { grid-column: 4 / 5; grid-row: 2; }
+
+/* ─── GLASS CARD BASE ─── */
+.bento-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* New skill item structure */
-.skill-item {
+/* Subtle top-gradient accent line per card */
+.bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(160, 91, 224, 0.8), transparent);
+    border-radius: 18px 18px 0 0;
+}
+
+.bento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(160, 91, 224, 0.18);
+}
+
+/* Per-card accent glow on hover */
+.bento-languages:hover { box-shadow: 0 16px 40px rgba(100, 180, 255, 0.18); }
+.bento-ml:hover        { box-shadow: 0 16px 40px rgba(160, 91, 224, 0.25); }
+.bento-llm:hover       { box-shadow: 0 16px 40px rgba(80, 200, 160, 0.18); }
+.bento-infra:hover     { box-shadow: 0 16px 40px rgba(0, 180, 255, 0.18); }
+.bento-backend:hover   { box-shadow: 0 16px 40px rgba(255, 160, 80, 0.15); }
+.bento-db:hover        { box-shadow: 0 16px 40px rgba(255, 90, 90, 0.15); }
+
+/* ─── CARD HEADER ─── */
+.bento-card-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
-    padding: 15px;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border-left: 3px solid rgb(160, 91, 224);
+    margin-bottom: 18px;
 }
 
-.skill-item img {
-    width: 30px;
-    height: 30px;
+.bento-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.bento-card-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+/* ─── PILL CHIPS (Languages / Infra cards) ─── */
+.bento-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    background: rgba(160, 91, 224, 0.12);
+    border: 1px solid rgba(160, 91, 224, 0.3);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #e0d4ff;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.pill:hover {
+    background: rgba(160, 91, 224, 0.25);
+    transform: translateY(-2px);
+}
+
+.pill img {
+    width: 18px;
+    height: 18px;
     object-fit: contain;
 }
 
-.skill-content {
+.pill i {
+    font-size: 0.95rem;
+    color: rgb(160, 91, 224);
+}
+
+/* Infra card — slightly different accent */
+.pill-infra {
+    background: rgba(0, 180, 255, 0.1);
+    border-color: rgba(0, 180, 255, 0.25);
+    color: #c8f0ff;
+}
+
+.pill-infra:hover {
+    background: rgba(0, 180, 255, 0.22);
+}
+
+.pill-infra i {
+    color: rgb(0, 200, 255);
+}
+
+/* ─── LIST ROWS (ML / LLM / Backend / DB cards) ─── */
+.bento-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 12px;
 }
 
-.skill-name {
-    font-weight: 600;
-    color: white;
+.bento-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    border-left: 2px solid rgba(160, 91, 224, 0.5);
+    transition: background 0.2s;
+}
+
+.bento-list li:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.bento-list li > i {
     font-size: 1rem;
+    color: rgb(160, 91, 224);
+    margin-top: 3px;
+    flex-shrink: 0;
+    width: 16px;
+    text-align: center;
 }
 
-.skill-desc {
-    font-size: 0.85rem;
-    color: #b0b0b0;
+.bento-img-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.bento-list li div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bento-list li strong {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f0e8ff;
+}
+
+.bento-list li span {
+    font-size: 0.78rem;
+    color: #9a9aaa;
     line-height: 1.3;
 }
+
+/* ─── BOTTOM DESCRIPTION (large cards) ─── */
+.bento-desc {
+    font-size: 0.82rem;
+    color: #8a8a9a;
+    line-height: 1.5;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* ─── ACCORDION CHEVRON (visible at all times in header) ─── */
+.bento-card-header {
+    justify-content: space-between;
+}
+
+.bento-chevron {
+    display: none;  /* hidden on desktop */
+    font-size: 0.85rem;
+    color: rgba(160, 91, 224, 0.8);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* ─── ACCORDION MODE — kicks in when 4-col bento would squeeze ─── */
+@media (max-width: 900px) {
+
+    /* Override grid to a simple single-column stack */
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    /* Each bento card becomes an accordion row */
+    .bento-card {
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        padding: 0;
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.03);
+        overflow: hidden;
+        align-self: unset !important;
+    }
+
+    .bento-card:last-child {
+        border-bottom: none;
+    }
+
+    /* Top accent line: only left border as an indicator */
+    .bento-card::before {
+        display: none;
+    }
+
+    /* Header becomes the clickable toggle */
+    .bento-card-header {
+        cursor: pointer;
+        padding: 16px 20px;
+        margin-bottom: 0;
+        user-select: none;
+        border-left: 3px solid rgba(160, 91, 224, 0.7);
+        transition: background 0.2s;
+        gap: 10px;
+    }
+
+    .bento-card-header:hover {
+        background: rgba(160, 91, 224, 0.06);
+    }
+
+    /* Show chevron on mobile/tablet */
+    .bento-chevron {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Rotate chevron when open */
+    .bento-card.accordion-open .bento-chevron {
+        transform: rotate(180deg);
+    }
+
+    /* The collapsible body — hidden by default */
+    .bento-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+        padding: 0 20px;
+    }
+
+    /* Expanded state */
+    .bento-card.accordion-open .bento-body {
+        max-height: 600px;
+        padding: 14px 20px 18px;
+    }
+
+    /* Remove lift hover on mobile */
+    .bento-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Reset all card-specific grid columns (not needed in flex mode) */
+    .bento-languages,
+    .bento-ml,
+    .bento-llm,
+    .bento-infra,
+    .bento-backend,
+    .bento-db {
+        grid-column: unset;
+        grid-row: unset;
+    }
+}
+
+
 
 
 

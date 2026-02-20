@@ -95,58 +95,107 @@
             class="analytics-icon"
           />
         </div>
-        <div class="skills-container">
-          <div class="programming-skills">
-            <h2>Programming</h2>
-            <div class="skill-item">
-              <img src="Icons/python.png" alt="Python" />
-              <div class="skill-content">
-                <span class="skill-name">Python</span>
-                <span class="skill-desc">Used for AI Agent project, ML mini-projects</span>
-              </div>
+        <div class="bento-grid">
+
+          <!-- LANGUAGES -->
+          <div class="bento-card bento-languages">
+            <div class="bento-card-header">
+              <span class="bento-icon">💻</span>
+              <h2>Languages</h2>
+              <i class="fa-solid fa-chevron-down bento-chevron"></i>
             </div>
-            <div class="skill-item">
-              <img src="Icons/javascript.png" alt="JavaScript" />
-              <div class="skill-content">
-                <span class="skill-name">JavaScript</span>
-                <span class="skill-desc">Built interactive portfolio & UI features</span>
+            <div class="bento-body">
+              <div class="bento-pills">
+                <span class="pill"><img src="Icons/python.png" alt="Python" />Python</span>
+                <span class="pill"><img src="Icons/cpp.png" alt="C++" />C++</span>
+                <span class="pill"><img src="Icons/mysql.png" alt="SQL" />SQL</span>
+                <span class="pill"><img src="Icons/javascript.png" alt="JavaScript" />JavaScript</span>
+                <span class="pill"><img src="Icons/Html.png" alt="HTML/CSS" />HTML / CSS</span>
               </div>
-            </div>
-            <div class="skill-item">
-              <img src="Icons/cpp.png" alt="C++" />
-              <div class="skill-content">
-                <span class="skill-name">C++</span>
-                <span class="skill-desc">Solved 200+ problems on LeetCode</span>
-              </div>
+              <p class="bento-desc">Core stack — from DSA and backend scripting to interactive web interfaces.</p>
             </div>
           </div>
-          <div class="frameworks-tools">
-            <h2>Frameworks & Tools</h2>
-            <div class="skill-item">
-              <img src="Icons/react.png" alt="React" />
-              <div class="skill-content">
-                <span class="skill-name">React</span>
-                <span class="skill-desc">Portfolio website & 2 personal projects</span>
-              </div>
+
+          <!-- MACHINE LEARNING -->
+          <div class="bento-card bento-ml">
+            <div class="bento-card-header">
+              <span class="bento-icon">🧠</span>
+              <h2>Machine Learning</h2>
+              <i class="fa-solid fa-chevron-down bento-chevron"></i>
             </div>
-            <div class="skill-item">
-              <img src="Icons/git.png" alt="Git/GitHub" />
-              <div class="skill-content">
-                <span class="skill-name">Git/GitHub</span>
-                <span class="skill-desc">Managed team projects & personal repos</span>
-              </div>
-            </div>
-          </div>
-          <div class="databases">
-            <h2>Databases</h2>
-            <div class="skill-item">
-              <img src="Icons/mysql.png" alt="SQL" />
-              <div class="skill-content">
-                <span class="skill-name">SQL</span>
-                <span class="skill-desc">Designed queries for mini projects, practice problems</span>
-              </div>
+            <div class="bento-body">
+              <ul class="bento-list">
+                <li><i class="fa-solid fa-chart-line"></i><div><strong>Scikit-learn</strong><span>TF-IDF, Naive Bayes, NLP classifiers</span></div></li>
+                <li><i class="fa-solid fa-brain"></i><div><strong>TensorFlow &amp; PyTorch</strong><span>Deep learning, model training &amp; eval</span></div></li>
+                <li><i class="fa-solid fa-language"></i><div><strong>NLTK</strong><span>NLP &amp; sentiment analysis</span></div></li>
+              </ul>
             </div>
           </div>
+
+          <!-- LLM & AI SYSTEMS -->
+          <div class="bento-card bento-llm">
+            <div class="bento-card-header">
+              <span class="bento-icon">🤖</span>
+              <h2>LLM &amp; AI Systems</h2>
+              <i class="fa-solid fa-chevron-down bento-chevron"></i>
+            </div>
+            <div class="bento-body">
+              <ul class="bento-list">
+                <li><i class="fa-solid fa-microchip"></i><div><strong>Quantization (GGUF)</strong><span>Mistral 7B &amp; Phi — ~70–75% memory reduction</span></div></li>
+                <li><i class="fa-solid fa-robot"></i><div><strong>Ollama &amp; Open WebUI</strong><span>Local LLM, multi-user browser inference</span></div></li>
+                <li><i class="fa-solid fa-wand-magic-sparkles"></i><div><strong>OpenAI APIs &amp; mem0</strong><span>Long-term memory AI agent (J.A.R.V.I.S)</span></div></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- INFRA & DEVOPS -->
+          <div class="bento-card bento-infra">
+            <div class="bento-card-header">
+              <span class="bento-icon">🐳</span>
+              <h2>Infrastructure &amp; DevOps</h2>
+              <i class="fa-solid fa-chevron-down bento-chevron"></i>
+            </div>
+            <div class="bento-body">
+              <div class="bento-pills">
+                <span class="pill pill-infra"><i class="fa-brands fa-docker"></i>Docker</span>
+                <span class="pill pill-infra"><i class="fa-brands fa-linux"></i>Linux</span>
+                <span class="pill pill-infra"><i class="fa-solid fa-shield-halved"></i>Caddy</span>
+                <span class="pill pill-infra"><i class="fa-solid fa-network-wired"></i>Tailscale</span>
+                <span class="pill pill-infra"><img src="Icons/git.png" alt="Git" />Git</span>
+              </div>
+              <p class="bento-desc">Self-hosted AI lab on 8GB RAM Linux — containerized, HTTPS-secured &amp; remote-accessible via Tailscale.</p>
+            </div>
+          </div>
+
+          <!-- BACKEND & APIs -->
+          <div class="bento-card bento-backend">
+            <div class="bento-card-header">
+              <span class="bento-icon">🖥️</span>
+              <h2>Backend &amp; APIs</h2>
+              <i class="fa-solid fa-chevron-down bento-chevron"></i>
+            </div>
+            <div class="bento-body">
+              <ul class="bento-list">
+                <li><i class="fa-solid fa-server"></i><div><strong>Flask (REST APIs)</strong><span>ML model serving — &lt;10–50ms latency</span></div></li>
+                <li><i class="fa-brands fa-chrome"></i><div><strong>Chrome Extensions</strong><span>Real-time inference for fake job detector</span></div></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DATABASES -->
+          <div class="bento-card bento-db">
+            <div class="bento-card-header">
+              <span class="bento-icon">🗄️</span>
+              <h2>Databases</h2>
+              <i class="fa-solid fa-chevron-down bento-chevron"></i>
+            </div>
+            <div class="bento-body">
+              <ul class="bento-list">
+                <li><img src="Icons/mysql.png" alt="MySQL" class="bento-img-icon" /><div><strong>MySQL</strong><span>Relational DB design for backends &amp; projects</span></div></li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </section>
       <hr />
