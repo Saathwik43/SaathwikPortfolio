@@ -19,13 +19,13 @@
     <header>
       <nav>
         <div class="left">Saathwik's Portfolio.</div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div class="right">
-          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <ul id="nav-menu">
+          <ul>
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -37,23 +37,25 @@
     </header>
     <main>
       <section class="firstSection" id="home">
-        <div class="LeftSection">
-          Hi, My name is <span class="purple">Saathwik</span>
-          <div>and i am a passionate</div>
-          <span id="element"></span>
-          <div class="buttons">
-            <a href="Saathwikresume.pdf" download class="btn">
-              <img src="Icons/download.png" alt="Download" />
-              Download Resume
-            </a>
-            <a href="https://github.com/Saathwik43" target="_blank" class="btn">
-              <img src="Icons/github-logo.png" alt="GitHub" />
-              Visit Github
-            </a>
+        <div class="container">
+          <div class="LeftSection">
+            Hi, My name is <span class="purple">Saathwik</span>
+            <div>and i am a passionate</div>
+            <span id="element"></span>
+            <div class="buttons">
+              <a href="Saathwikresume.pdf" download class="btn">
+                <img src="Icons/download.png" alt="Download" />
+                Download Resume
+              </a>
+              <a href="https://github.com/Saathwik43" target="_blank" class="btn">
+                <img src="Icons/github-logo.png" alt="GitHub" />
+                Visit Github
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="rightSection">
-          <img src="Icons/bg.png" alt="" />
+          <div class="rightSection">
+            <img src="Icons/bg.png" alt="" />
+          </div>
         </div>
       </section>
       <hr />
@@ -163,7 +165,7 @@
             <div class="bento-body">
               <div class="bento-pills">
                 <span class="pill pill-infra"><i class="fa-brands fa-docker"></i>Docker</span>
-                <span class="pill pill-infra"><i class="fa-brands fa-linux"></i>Linux</span>
+                <span class="pill pill-infra"><img src="Icons/linux.png" alt="Linux" />Linux</span>
                 <span class="pill pill-infra"><i class="fa-solid fa-shield-halved"></i>Caddy</span>
                 <span class="pill pill-infra"><i class="fa-solid fa-network-wired"></i>Tailscale</span>
                 <span class="pill pill-infra"><img src="Icons/git.png" alt="Git" />Git</span>
@@ -216,28 +218,57 @@
         <div class="projects-container">
           <div class="project-card">
             <div class="project-img">
-              <img src="Icons/project1.png" alt="Sentiment Analysis Chatbot" />
+              <img src="Icons/project1.png" alt="Real vs Fake Job Classifier" />
             </div>
-            <h3>Sentiment Analysis Chatbot</h3>
+            <h3>Real vs Fake Job Classifier</h3>
             <p class="project-description">
-              A beginner-friendly GUI-based sentiment analysis chatbot that
-              analyzes text sentiment using natural language processing.
+              NLP-based fraud detection system trained on 17,000+ job listings. 
+              Features a Flask API and Chrome Extension for real-time inference 
+              with <50ms latency.
             </p>
             <div class="project-tech">
               <span>Python</span>
-              <span>Pandas</span>
-              <span>NLTK</span>
+              <span>Flask</span>
+              <span>NLP</span>
             </div>
             <div class="project-links">
               <a
-                href="https://github.com/Saathwik43/Sentiment_Analysis_Chatbot.git"
-                target="_blank"
+                href="https://github.com/Saathwik43/Fake-Job-Detector.git"
                 class="btn project-btn"
+                target="_blank"
               >
                 <img src="Icons/github-logo.png" alt="GitHub" />
                 Code
               </a>
-              <a href="https://sentimentanalysischatbot.streamlit.app/" target="_blank" class="btn project-btn">
+              <a href="#" class="btn project-btn disabled" style="pointer-events: none; opacity: 0.6;">
+                <img src="Icons/link.png" alt="Live Demo" />
+                Live Demo
+              </a>
+            </div>
+          </div>
+
+          <!-- Self-Hosted AI Lab Project -->
+          <div class="project-card">
+            <div class="project-img">
+              <img src="Icons/ailab.png" alt="Self-Hosted AI Lab" />
+            </div>
+            <h3>Self-Hosted AI Lab</h3>
+            <p class="project-description">
+              Deployed Mistral 7B & Phi LLMs locally on 8GB RAM Linux server using GGUF quantization (75% memory reduction). 
+              Containerized stack with HTTPS/Tailscale security.
+            </p>
+            <div class="project-tech">
+              <span>Docker</span>
+              <span>Linux</span>
+              <span>LLMs</span>
+              <span>GGUF</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn project-btn disabled" style="pointer-events: none; opacity: 0.6;">
+                <img src="Icons/github-logo.png" alt="GitHub" />
+                Code
+              </a>
+              <a href="#" class="btn project-btn disabled" style="pointer-events: none; opacity: 0.6;">
                 <img src="Icons/link.png" alt="Live Demo" />
                 Live Demo
               </a>

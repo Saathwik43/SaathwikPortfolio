@@ -4,34 +4,23 @@ var typed = new Typed('#element', {
     typeSpeed: 60,
 });
 
-// ─── Hamburger Menu Toggle ─────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function () {
-    var hamburger = document.getElementById('hamburger');
-    var navMenu   = document.getElementById('nav-menu');
+// ─── Mobile Menu Toggle (matches main branch) ─────────────────────────────
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const menuRight = document.querySelector('.right');
 
-    if (!hamburger || !navMenu) return;
+menuToggle.addEventListener('click', function() {
+    menuToggle.classList.toggle('active');
+    menuRight.classList.toggle('active');
+});
 
-    function openMenu()  { hamburger.classList.add('open');    navMenu.classList.add('open');    }
-    function closeMenu() { hamburger.classList.remove('open'); navMenu.classList.remove('open'); }
-
-    // Hamburger button click — toggle
-    hamburger.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (navMenu.classList.contains('open')) { closeMenu(); } else { openMenu(); }
-    });
-
-    // Clicking a link inside the dropdown — close
-    navMenu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // Clicking anywhere outside nav — close
-    document.addEventListener('click', function (e) {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            closeMenu();
-        }
+// Close menu when clicking on a nav link
+document.querySelectorAll('.right ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        menuRight.classList.remove('active');
     });
 });
+
 
 
 // Function to handle smooth scrolling to sections when clicking navigation links
@@ -305,27 +294,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ─── Skills Accordion (active on ≤900px) ──────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
-    var bentoCards = document.querySelectorAll('.bento-card');
+    const grid = document.querySelector('.bento-grid');
+    if (!grid) return;
 
-    bentoCards.forEach(function (card) {
-        var header = card.querySelector('.bento-card-header');
+    // Use event delegation for better performance and reliability
+    grid.addEventListener('click', function (e) {
+        // Only trigger if screen is small (matches CSS breakpoint)
+        if (window.innerWidth > 900) return;
+
+        // Find the clicked header
+        const header = e.target.closest('.bento-card-header');
         if (!header) return;
 
-        header.addEventListener('click', function () {
-            // Only activate accordion on small screens (matches CSS breakpoint)
-            if (window.innerWidth > 900) return;
+        // Prevent text selection double-click weirdness
+        e.preventDefault();
 
-            var isOpen = card.classList.contains('accordion-open');
+        // Find the parent card
+        const card = header.closest('.bento-card');
+        if (!card) return;
 
-            // Collapse all cards first
-            bentoCards.forEach(function (c) {
-                c.classList.remove('accordion-open');
-            });
-
-            // Re-open clicked one if it was closed
-            if (!isOpen) {
-                card.classList.add('accordion-open');
-            }
+        // Check current state
+        const wasOpen = card.classList.contains('accordion-open');
+        
+        // Collapse ALL cards first (exclusive accordion behavior)
+        document.querySelectorAll('.bento-card').forEach(c => {
+            c.classList.remove('accordion-open');
         });
+
+        // If it wasn't open, open it now
+        if (!wasOpen) {
+            card.classList.add('accordion-open');
+        }
     });
 });
