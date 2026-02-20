@@ -4,6 +4,36 @@ var typed = new Typed('#element', {
     typeSpeed: 60,
 });
 
+// ─── Hamburger Menu Toggle ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+    var hamburger = document.getElementById('hamburger');
+    var navMenu   = document.getElementById('nav-menu');
+
+    if (!hamburger || !navMenu) return;
+
+    function openMenu()  { hamburger.classList.add('open');    navMenu.classList.add('open');    }
+    function closeMenu() { hamburger.classList.remove('open'); navMenu.classList.remove('open'); }
+
+    // Hamburger button click — toggle
+    hamburger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (navMenu.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+    });
+
+    // Clicking a link inside the dropdown — close
+    navMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Clicking anywhere outside nav — close
+    document.addEventListener('click', function (e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            closeMenu();
+        }
+    });
+});
+
+
 // Function to handle smooth scrolling to sections when clicking navigation links
 document.addEventListener('DOMContentLoaded', function() {
     // Get all navigation links with hash (#) references
@@ -271,4 +301,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         });
     }
+});
+
+// ─── Skills Accordion (active on ≤900px) ──────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+    var bentoCards = document.querySelectorAll('.bento-card');
+
+    bentoCards.forEach(function (card) {
+        var header = card.querySelector('.bento-card-header');
+        if (!header) return;
+
+        header.addEventListener('click', function () {
+            // Only activate accordion on small screens (matches CSS breakpoint)
+            if (window.innerWidth > 900) return;
+
+            var isOpen = card.classList.contains('accordion-open');
+
+            // Collapse all cards first
+            bentoCards.forEach(function (c) {
+                c.classList.remove('accordion-open');
+            });
+
+            // Re-open clicked one if it was closed
+            if (!isOpen) {
+                card.classList.add('accordion-open');
+            }
+        });
+    });
 });

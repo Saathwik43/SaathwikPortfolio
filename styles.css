@@ -149,6 +149,49 @@ nav ul li a:not(.active):hover::after {
     transform: scaleX(0.8);
 }
 
+/* .right nav div — always flex so hamburger + ul are row-aligned */
+.right {
+    display: flex;
+    align-items: center;
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger → X when open */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8.75px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8.75px) rotate(-45deg);
+}
+
+
+
 /* ===================================================
    COMMON SECTION STYLES
    =================================================== */
@@ -1526,5 +1569,116 @@ footer {
     }
     50% { 
         box-shadow: 0 6px 16px rgba(26, 31, 92, 0.35);
+    }
+}
+
+/* ===================================================
+   MOBILE RESPONSIVE STYLES
+   (must be at the end so these override desktop rules)
+   =================================================== */
+@media (max-width: 768px) {
+
+    /* ── Nav ── */
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .right {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    #nav-menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: rgb(18, 18, 62);
+        border: 1px solid rgba(160, 91, 224, 0.25);
+        border-radius: 10px;
+        padding: 12px 0;
+        min-width: 180px;
+        z-index: 1050;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    #nav-menu.open {
+        display: flex !important;
+    }
+
+    #nav-menu li {
+        margin: 0;
+    }
+
+    #nav-menu li a {
+        display: block;
+        padding: 11px 20px;
+        font-size: 0.95rem;
+    }
+
+    #nav-menu li a:hover,
+    #nav-menu li a.active {
+        background: rgba(160, 91, 224, 0.12);
+        color: rgb(160, 91, 224);
+    }
+
+    /* underline effect disabled on mobile dropdown */
+    #nav-menu li a::after,
+    #nav-menu li a.active::after {
+        display: none !important;
+    }
+
+    /* ── Hero (firstSection) ── */
+    .firstSection {
+        flex-direction: column-reverse !important;
+        margin: 30px 20px !important;
+        gap: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .firstSection > div,
+    .firstSection > .LeftSection {
+        width: 100% !important;
+    }
+
+    .LeftSection {
+        font-size: 1.25rem !important;
+    }
+
+    .LeftSection .buttons {
+        padding: 20px 0 !important;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .LeftSection .btn {
+        margin-right: 0 !important;
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+
+    .rightSection {
+        display: flex;
+        justify-content: center;
+    }
+
+    .rightSection img {
+        width: 55% !important;
+        max-width: 200px;
+    }
+
+    /* ── Common section margins ── */
+    .Secondsection,
+    .about-section,
+    .projects-section {
+        max-width: 95vw;
     }
 }
